@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import axios from 'axios';
+import SearchLyrics from './SearchLyrics'; 
 
 function App() {
+  const [lyrics, setLyrics] = useState('')
+
+  function getLyrics(artist, title) {
+    axios.get(`https://api.lyrics.ovh/v1/${artist}/${title}`)
+    .then(res => {
+      console.log(res)
+    })
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchLyrics getLyrics={getLyrics}/>
     </div>
   );
 }
