@@ -2,7 +2,9 @@ import React from 'react'
 
 function LyricsCard({ lyrics }) {
   return (
-    <div>{ lyrics }</div>
+    <div className='lyrics-card'>
+      { lyrics }
+    </div>
   )
 }
 

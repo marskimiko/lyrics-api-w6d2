@@ -13,7 +13,7 @@ function SearchLyrics({ getLyrics }) {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
+      <form className="form-card" onSubmit={handleSubmit}>
         <input
           placeholder='Artist...'
           type='search'

@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import SearchLyrics from './SearchLyrics';
 import LyricsCard from './LyricsCard';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import styles from './styles.css';
 
 function App() {
   const [lyrics, setLyrics] = useState('')
@@ -22,7 +20,8 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="container">
+      <h1>Lyrics</h1>
       <SearchLyrics getLyrics={getLyrics}/>
       <LyricsCard lyrics={lyrics}/>
     </div>
